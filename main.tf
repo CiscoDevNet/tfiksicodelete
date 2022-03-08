@@ -2,7 +2,7 @@
 data "terraform_remote_state" "global" {
   backend = "remote"
   config = {
-    organization = "Lab14"
+    organization = var.org
     workspaces = {
       name = var.globalwsname
     }
@@ -20,6 +20,8 @@ terraform {
   }
 }
 
+variable "org" {
+}
 variable "name" {
   default = "https://www.intersight.com"
 }
